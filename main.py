@@ -57,7 +57,7 @@ from word2number import w2n
 # --------------------------------------------------
 
 r = sr.Recognizer()
-
+# recognizer is a class which provides methods to process audio.
 # Creates a Recognizer object.
 # It is responsible for processing and recognizing speech.
 
@@ -99,7 +99,7 @@ def listen():
         print("Recognized:", text)
 
         # Removes unnecessary spaces and returns the recognized text.
-        return text.strip()
+        return text.strip()     
 
     except sr.UnknownValueError:
 
@@ -169,10 +169,10 @@ while True:
 
     # Extracts the item name by removing numeric words
     # and the word "rs" from the recognized sentence.
-    item_name = " ".join(
-        w for w in words
-        if not w.replace(".", "").isdigit() and w.lower() != "rs"
-    )
+        item_name = " ".join(
+            w for w in words
+            if not w.replace(".", "").isdigit() and w.lower() != "rs"
+        )
 
     # If a price is found, stores the item and price in the list.
     if price:
@@ -192,6 +192,10 @@ while True:
 # --------------------------------------------------
 # STEP 6: GENERATE PDF REPORT
 # --------------------------------------------------
+
+#Total 
+total=0
+
 
 # Creates a new PDF file named Items_Report.pdf.
 c = canvas.Canvas("Items_Report.pdf")
@@ -215,12 +219,14 @@ for i, (name, price) in enumerate(items, 1):
     # Writes the item number, name and price into the PDF.
     # X coordinate = 50, Y coordinate = current y value.
     c.drawString(50, y, f"{i}. {name} --------->  Rs {price}")
+    total=total+int(price)
 
     # Decreases the Y coordinate by 20 for the next item.
     # This prints each item on a new line.
 
     y -= 20
 
+c.drawString(50,y,f"Grand Total: {total}")
 # Saves the PDF file.
 c.save()
 
