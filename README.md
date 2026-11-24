@@ -1,34 +1,32 @@
 # 🎙️ Voice to PDF Item Report Generator
 
-A Python-based project that allows users to add item names and prices using voice commands and automatically generates a PDF report containing all the collected items.
+A Python-based project that converts voice input into an organized PDF item report using Speech Recognition.
 
-## 📌 Project Overview
-
-The Voice to PDF Item Report Generator uses speech recognition to capture item details through a microphone. It converts spoken input into text, extracts item names and numerical prices, stores the details, and generates a PDF report using the ReportLab library.
+The application allows users to speak item names and prices, automatically extracts the information, stores multiple items, calculates the grand total, and generates a PDF report.
 
 ## ✨ Features
 
-- Voice-based item entry
-- Speech-to-text conversion
-- Automatic item name extraction
-- Numerical price extraction
-- Stores multiple items in a Python list
-- Generates a PDF report automatically
-- Simple and easy-to-use interface through the terminal
+- 🎤 **Voice Input:** Capture item details through a microphone.
+- 🗣️ **Speech Recognition:** Convert spoken words into text using Google Speech Recognition.
+- 📦 **Item Extraction:** Identify item names and prices from recognized speech.
+- 🔢 **Number Conversion:** Convert number words into numeric values using Word2Number.
+- 📝 **Multiple Items:** Store multiple item entries in a list.
+- 📄 **PDF Generation:** Generate an organized PDF report.
+- 💰 **Automatic Total Calculation:** Calculate the grand total of all added items.
+- 🔊 **Error Handling:** Handle unclear speech and speech recognition service errors.
 
 ## 🛠️ Technologies Used
 
-| Technology | Purpose |
-|---|---|
-| Python | Main programming language |
-| SpeechRecognition | Converts speech into text |
-| PyAudio | Captures audio through the microphone |
-| ReportLab | Creates PDF reports |
+- Python
+- SpeechRecognition
+- PyAudio
+- ReportLab
+- Word2Number
 
-## 📂 Project Structure
+## 📁 Project Structure
 
 ```text
-Voice-to-PDF-Item-Report-Generator/
+Voice_to_PDF_Item_Report_Generator/
 │
 ├── main.py
 ├── requirements.txt
@@ -36,21 +34,21 @@ Voice-to-PDF-Item-Report-Generator/
 └── Items_Report.pdf
 ```
 
-## ⚙️ Installation and Setup
+## ⚙️ Installation & Setup
 
 **1. Clone the repository**
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone https://github.com/Shrushtipatel2808/Voice-to-PDF-Item-Report-Generator.git
 ```
 
-**2. Open the project folder**
+**2. Navigate to the project folder**
 
 ```bash
 cd Voice-to-PDF-Item-Report-Generator
 ```
 
-**3. Install the required libraries**
+**3. Install dependencies**
 
 ```bash
 pip install -r requirements.txt
@@ -64,65 +62,69 @@ python main.py
 
 ## 🎤 How to Use
 
-1. Run the Python program.
-2. Allow microphone access if requested.
-3. Speak an item name followed by its numerical price.
-4. The program recognizes the spoken input.
-5. The item name and price are stored in a list.
-6. Say `exit` to stop adding items.
-7. The program automatically generates `Items_Report.pdf`.
+1. Run the Python application.
+2. Allow microphone access.
+3. Speak an item name followed by its price.
+4. The application recognizes and extracts the item details.
+5. Repeat for multiple items.
+6. Say `exit` to finish adding items.
+7. The application calculates the grand total.
+8. A PDF report named `Items_Report.pdf` is generated.
 
-**Example Voice Commands:**
+### Example Voice Inputs
 
 ```text
-Apple 50
-Milk 60
+Apple 500
+Milk 50
 Rice 100
-Sugar 45
-Exit
+exit
 ```
 
 ## 📄 Sample PDF Output
 
-The generated PDF contains an item report with numbered entries and their respective prices.
+The generated PDF report contains:
+
+- Item number
+- Item name
+- Item price
+- Grand Total
 
 Example:
 
-```text
-              Item Report
+| Item | Price |
+|---|---:|
+| Apple | ₹500 |
+| Milk | ₹50 |
+| Rice | ₹100 |
+| **Grand Total** | **₹650** |
 
-1. Apple  ---------> Rs 50
-2. Milk   ---------> Rs 60
-3. Rice   ---------> Rs 100
-4. Sugar  ---------> Rs 45
-```
+## 🧠 Concepts Learned
 
-## 📚 Python Concepts Used
-
-- Functions
-- While loops
-- For loops
-- Conditional statements
-- Lists and tuples
-- String operations
-- Exception handling
-- File generation
+- Python Functions
+- Loops (`for`, `while`)
+- Conditional Statements (`if-else`)
+- Lists and Tuples
+- String Manipulation
+- Exception Handling (`try-except`)
+- Type Conversion
+- Speech Recognition
+- PDF Generation
+- Automatic Calculations
 
 ## 🚀 Future Improvements
 
-- Add support for spoken number words.
-- Add total price calculation.
-- Add date and time to the PDF report.
-- Improve PDF formatting and design.
-- Add a graphical user interface (GUI).
-- Support editing and deleting items.
+- Quantity Support
+- Expense Summary
+- Better PDF Formatting
+- Edit and Delete Items
+- Multilingual Voice Recognition
 
 ## 👩‍💻 Author
 
 **Shrushti Patel**
 
-Computer Engineering Student | Python & AI/ML Learner
+GitHub: [@Shrushtipatel2808](https://github.com/Shrushtipatel2808)
 
 ---
 
-⭐ If you find this project useful, feel free to explore and improve it!
+⭐ If you find this project interesting, feel free to explore the repository!
